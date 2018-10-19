@@ -34,6 +34,7 @@ import (
 	"time"
 )
 
+// Server :
 type Server struct {
 	connection          *net.UDPConn
 	destinationEndpoint *net.UDPAddr
@@ -129,6 +130,7 @@ func (server *Server) start(ticker *time.Ticker) {
 	}()
 }
 
+// Forever :
 func (server *Server) Forever() error {
 	go server.handleIncomingUDP()
 	//defer serverConnection.Close()
